@@ -1,0 +1,57 @@
+<!--<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>My First App</span>
+        <span class="example-fill-remaining-space"></span>
+        <span class="align-center"></span>
+        <span class="example-spacer"></span>
+        <button mat-button>About</button>
+        <button mat-button>Contact</button>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voicemail</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Disable alerts</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar> -->
+<mat-toolbar color="primary">
+        <mat-toolbar-row>
+        <div class="container">
+          <a href="#" class="navbar-brand">
+            <!-- Logo Image -->
+            <img src="/src/assets/logo.png" width="45" alt="Logo" class="d-inline-block align-middle mr-2">
+<!-- Default form login -->
+          </a>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<form class="text-center p-5 w-50">
+
+    <p class="h4 mb-4">Sign in</p>
+
+    <input matInput placeholder="Username" [(ngModel)]="username" name="username" class="form-control mb-4" required>
+
+    <!-- Password -->
+
+    <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password"
+        class="form-control mb-4" required>
+        <div class="d-flex justify-content-between">
+        <mat-checkbox class="float-left ">Remember me</mat-checkbox>
+        <button mat-raised-button (click)="login()" color="primary" class="pull-right">Login</button>
+
+        <a href="#dummy">Forgot Password?</a>
+
+    </div>
+
+</form>
