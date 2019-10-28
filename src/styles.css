@@ -1,2 +1,7 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+.form-control.ng-touched.ng-invalid
+{
+    border: 1px solid red;
+}

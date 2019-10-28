@@ -1,1 +1,91 @@
-<p>user works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">TechX Solutions</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <button mat-button [matMenuTriggerFor]="menu">Leaves</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Apply</button>
+                    <button mat-menu-item>Track</button>
+                </mat-menu>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Attendance</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Help</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<form class="p-5 w-50">
+    <div class="example-container">
+
+        <mat-form-field appearance="outline">
+            <mat-select placeholder="Leave Type">
+                <mat-option value="option">Option</mat-option>
+                <mat-option value="option">Option</mat-option>
+                <mat-option value="option">Option</mat-option>
+                <mat-option value="option">Option</mat-option>
+                <mat-option value="option">Option</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="example-container">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <input matInput [matDatepicker]="picker" placeholder="Choose start date">
+            <mat-datepicker-toggle matSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-select placeholder="From Session" appearance="outline">
+                <mat-option value="option3">1</mat-option>
+                <mat-option value="option3">2</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+
+
+    <div class="example-container">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <input matInput [matDatepicker]="picker2" placeholder="Choose end date">
+            <mat-datepicker-toggle matSuffix [for]="picker2">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-select placeholder="To Session">
+                <mat-option value="option2">1</mat-option>
+                <mat-option value="option2">2</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="example-container row">
+    <div class="form-group col-xs-4">
+        <label class="dist" for="days">Days</label>
+        <input type="number" id="days" class="form-control dist" value="0" disabled>
+
+    </div>
+    <div class="form-group col-xs-4">
+        <label class="dist" for="balance">Balance</label>
+        <input type="number" id="balance" class="form-control dist" value="0" disabled>
+
+    </div>
+    </div>
+   
+    <div class="example-container">
+        <mat-form-field class="widthdef" appearance="outline">
+            <textarea matInput placeholder="Reason" rows="4"></textarea>
+        </mat-form-field>
+    </div>
+
+</form>

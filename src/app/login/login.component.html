@@ -26,32 +26,36 @@
     </mat-toolbar-row>
 </mat-toolbar> -->
 <mat-toolbar color="primary">
-        <mat-toolbar-row>
+    <mat-toolbar-row>
         <div class="container">
-          <a href="#" class="navbar-brand">
-            <!-- Logo Image -->
-            <img src="/src/assets/logo.png" width="45" alt="Logo" class="d-inline-block align-middle mr-2">
-<!-- Default form login -->
-          </a>
+            <a href="#" class="navbar-brand">
+                <!-- Logo Image -->
+                <img src="/src/assets/logo.png" width="45" alt="Logo" class="d-inline-block align-middle mr-2">
+                <!-- Default form login -->
+            </a>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
-<form class="text-center p-5 w-50">
+<form class="p-5 w-50" #logInForm="ngForm" (ngSubmit)="login(logInForm)">
 
     <p class="h4 mb-4">Sign in</p>
 
-    <input matInput placeholder="Username" [(ngModel)]="username" name="username" class="form-control mb-4" required>
-
+    <input matInput placeholder="Username" [(ngModel)]="username" name="username" class="form-control mb-4" required
+        #userName="ngModel">
+    <div class="alert alert-danger" *ngIf="userName.touched && !userName.valid">Username is required</div>
     <!-- Password -->
 
     <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password"
-        class="form-control mb-4" required>
-        <div class="d-flex justify-content-between">
+        class="form-control mb-4" required #Password="ngModel">
+    <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">Password is required</div>
+    <div class="d-flex justify-content-between">
         <mat-checkbox class="float-left ">Remember me</mat-checkbox>
-        <button mat-raised-button (click)="login()" color="primary" class="pull-right">Login</button>
+        <button type ="submit" mat-raised-button color="primary" class="pull-right">Login</button>
 
         <a href="#dummy">Forgot Password?</a>
 
     </div>
 
 </form>
+{{logInForm.value | json}}
+

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {MatDialog} from '@angular/material'
+import { NgForm } from '@angular/forms';
+import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -8,16 +10,24 @@ import {MatDialog} from '@angular/material'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router) { }
-username: string;
-password: string;
+  constructor(private auth : AuthService) { 
+
+  }
+
   ngOnInit() {
   }
-  login() : void {
-    if(this.username == 'admin' && this.password == 'admin'){
+  login(logInForm:NgForm) : void { 
+    
+    const target = logInForm.value;
+    
+    const username = target.username;
+    const password = target.password;
+    console.log(username,password);
+    this.auth.getLoginDetails(username,password);
+    /*if(this.username == 'admin' && this.password == 'admin'){
      this.router.navigate(["user"]);
     }else {
       alert("Invalid credentials");
-    }
+    }*/
   }
   }

@@ -2,8 +2,10 @@ import {NgModule} from "@angular/core";
 import { CommonModule } from '@angular/common';
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
-  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule,MatCheckboxModule
+  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule,MatCheckboxModule,MatDatepickerModule,MatNativeDateModule, 
+ MatSelectModule
 } from '@angular/material';
+
 
 @NgModule({
   imports: [
@@ -17,7 +19,10 @@ import {
   MatMenuModule,
   MatIconModule,
   MatCheckboxModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatDatepickerModule,
+  MatSelectModule,
+  MatNativeDateModule
   ],
   exports: [
   CommonModule,
@@ -26,11 +31,14 @@ import {
    MatCardModule, 
    MatInputModule, 
    MatDialogModule, 
+   MatDatepickerModule,
    MatTableModule, 
    MatMenuModule,
    MatIconModule,
    MatCheckboxModule,
-   MatProgressSpinnerModule
+   MatProgressSpinnerModule,
+   MatSelectModule,
+   MatNativeDateModule
    ],
 })
 export class CustomMaterialModule { }
